@@ -1,0 +1,7 @@
+.navUl{
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    margin: 10px;
+    gap: 15px;
+}
