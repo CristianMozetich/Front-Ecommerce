@@ -63,6 +63,7 @@ const ProductDetails = () => {
     <div>
       <h1>Detalles del producto</h1>
       <h2>{productDetails.title}</h2>
+      <p>${productDetails.price}</p>
       <p>{productDetails.description}</p>
 
       <label htmlFor="quantity">Cantidad:</label>

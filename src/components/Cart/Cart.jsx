@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { Context } from '../../utils/ContextProviders';
+import { Link } from 'react-router-dom';
 
 
 const Cart = () => {
@@ -93,6 +94,7 @@ const Cart = () => {
           </li>
         ))}
       </ul>
+      <Link to={'/checkout'}>Finalizar Compra</Link>
     </div>
   );
 };
