@@ -9,6 +9,7 @@ const ContextProvider = ({ children }) => {
   const [cartId, setCartId] = useState('');
   const [jwt, setJwt] = useState('');
 
+
   const decodeToken = (token) => {
     try {
       // Decodificar el token utilizando jwt-decode u otra implementación

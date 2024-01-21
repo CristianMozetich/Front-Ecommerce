@@ -1,11 +1,11 @@
 import { useContext, useEffect, useState } from 'react';
 import { Context } from '../../utils/ContextProviders';
-import { useParams } from 'react-router-dom';
+
 
 const Cart = () => {
   const { jwt, cartId } = useContext(Context);
   const [cart, setCart] = useState([]);
-  const { id } = useParams()
+
 
   useEffect(() => {
     const fetchCart = async () => {
@@ -37,9 +37,9 @@ const Cart = () => {
   }, [jwt, cartId]);
 
 
-  const removeFromCart = async () => {
+  const removeFromCart = async (id_prod) => {
     try{
-      const response = await fetch(`http://localhost:8090/api/carts/${cartId}/products/${id}`, {
+      const response = await fetch(`http://localhost:8090/api/carts/${cartId}/products/${id_prod}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -49,6 +49,8 @@ const Cart = () => {
       if (response.ok) {
         const data = await response.json();
         console.log(data);
+        setCart((prevCart) => prevCart.filter(item => item.id_prod._id !== id_prod));
+
       }else{
         console.log('Error al eliminar el producto del carrito')
       }
@@ -87,7 +89,7 @@ const Cart = () => {
           <li key={item.id_prod.title}>
             <p>Producto: {item.id_prod.title}</p>
             <p>Cantidad: {item.quantity}</p>
-            <button onClick={removeFromCart}>Eliminar</button>
+            <button onClick={ ()=> removeFromCart(item.id_prod._id) }>Eliminar</button>
           </li>
         ))}
       </ul>
