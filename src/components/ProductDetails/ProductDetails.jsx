@@ -20,7 +20,7 @@ const ProductDetails = () => {
     setCartId(tokenDecodificado.user.cart);
 
     try {
-      const response = await fetch(`http://localhost:8090/api/carts/${cartId}/products/${id}`, {
+      const response = await fetch(`https://backend-coderhouse-b16n.onrender.com/api/carts/${cartId}/products/${id}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ const ProductDetails = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:8090/api/products/${id}`, {
+    fetch(`https://backend-coderhouse-b16n.onrender.com/api/products/${id}`, {
       method: 'GET',
     })
       .then((res) => res.json())

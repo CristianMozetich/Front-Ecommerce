@@ -1,4 +1,3 @@
-import React from 'react'
 
 const Logout = () => {
 
@@ -7,7 +6,7 @@ const Logout = () => {
         e.preventDefault()
 
         try{
-            const logout = await fetch('http://localhost:8090/api/sessions/logout', {
+            const logout = await fetch('https://backend-coderhouse-b16n.onrender.com/api/sessions/logout', {
                 method: 'GET'
             })
     

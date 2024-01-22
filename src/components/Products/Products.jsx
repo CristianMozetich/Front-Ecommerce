@@ -7,7 +7,7 @@ const Products = () => {
   const [products, setProducts] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:8090/api/products', {
+    fetch('https://backend-coderhouse-b16n.onrender.com/api/products', {
       method: 'GET'
     })
     .then((res) => res.json())

@@ -12,7 +12,7 @@ const Cart = () => {
     const fetchCart = async () => {
 
       try {
-        const response = await fetch(`http://localhost:8090/api/carts/${cartId}`, {
+        const response = await fetch(`https://backend-coderhouse-b16n.onrender.com/api/carts/${cartId}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ const Cart = () => {
 
   const removeFromCart = async (id_prod) => {
     try{
-      const response = await fetch(`http://localhost:8090/api/carts/${cartId}/products/${id_prod}`, {
+      const response = await fetch(`https://backend-coderhouse-b16n.onrender.com/api/carts/${cartId}/products/${id_prod}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
