@@ -1,12 +1,12 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import { Context } from '../../utils/ContextProviders';
 import { Link } from 'react-router-dom';
 
+import './Cart.css'
 
 const Cart = () => {
-  const { jwt, cartId } = useContext(Context);
-  const [cart, setCart] = useState([]);
 
+  const { jwt, cartId, cart, setCart } = useContext(Context);
 
   useEffect(() => {
     const fetchCart = async () => {
@@ -35,7 +35,7 @@ const Cart = () => {
     if (cartId) {
       fetchCart();
     }
-  }, [jwt, cartId]);
+  }, [jwt, cartId, setCart]);
 
 
   const removeFromCart = async (id_prod) => {
@@ -85,16 +85,18 @@ const Cart = () => {
   return (
     <div>
       <h1>Carrito de Compras</h1>
-      <ul>
-        {combinedCart.map((item) => (
-          <li key={item.id_prod.title}>
-            <p>Producto: {item.id_prod.title}</p>
-            <p>Cantidad: {item.quantity}</p>
-            <button onClick={ ()=> removeFromCart(item.id_prod._id) }>Eliminar</button>
-          </li>
-        ))}
-      </ul>
-      <Link to={'/checkout'}>Finalizar Compra</Link>
+      <div className='cart'>
+        <ul>
+          {combinedCart.map((prods) => (
+            <li key={prods.id_prod.title}>
+              <p>Producto: {prods.id_prod.title}</p>
+              <p>Cantidad: {prods.quantity}</p>
+              <button onClick={ ()=> removeFromCart(prods.id_prod._id) }>Eliminar</button>
+            </li>
+          ))}
+        </ul>
+        <Link to={'/checkout'} >Finalizar compra</Link>
+      </div>
     </div>
   );
 };

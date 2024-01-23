@@ -1,9 +1,12 @@
+import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
-import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-
-
+import { Elements } from '@stripe/react-stripe-js';
+import { useContext } from 'react';
+import { Context } from '../../utils/ContextProviders';
 
 const CheckoutForm = () => {
+  const {cart} = useContext(Context)
+
   const stripe = useStripe();
   const elements = useElements();
 
@@ -24,10 +27,19 @@ const CheckoutForm = () => {
     }
   };
 
-  return (
-    <form className='card' onSubmit={handleSubmit}>
-      <CardElement />
 
+  return (
+
+    <form className='card' onSubmit={handleSubmit}>
+      {
+        cart.map((prods) => (
+          <div key={prods.id_prod.title}>
+              <p>Producto: {prods.id_prod.title}</p>
+              <p>Cantidad: {prods.quantity}</p>
+          </div>
+        ))
+      }
+      <CardElement />
       <button type="submit">Comprar</button>
     </form>
   );
@@ -38,13 +50,10 @@ const Checkout = () => {
   const stripePromise = loadStripe('pk_test_51ObSiJHTCFs5XNPn9JpO7VRSPJlMz0yh8PLiuh8LaRdoijMuDX9bt8pIBT1taqeZLfdyWX7o8uDugn4ZEx7cGOPr00opcoGUdO');
 
   return (
-    <div>
-      <h1>Este es el Checkout</h1>
       <Elements stripe={stripePromise}>
-        <CheckoutForm />
+        <CheckoutForm/>
       </Elements>
-    </div>
-  );
-};
+  )
+}
 
 export default Checkout;

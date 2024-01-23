@@ -6,10 +6,12 @@ import NewProducts from './components/NewProducts/NewProducts'
 import Header from './components/Header/Header'
 import Home from './components/Home/Home'
 import ProductDetails from './components/ProductDetails/ProductDetails'
-import Cart from './components/Cart/Cart'
 import ContextProvider from './utils/ContextProviders'
+import Cart from './components/Cart/Cart'
 import Checkout from './components/Checkout/Checkout'
 import './App.css'
+
+
 
 
 
@@ -31,7 +33,7 @@ function App() {
         <Route path='/products/:id' element={<ProductDetails/>} />
         <Route path='/carts/:id' element={<Cart/>} />
         <Route path='/new-products' element={<NewProducts />} />
-        <Route path='/checkout' element={<Checkout/>} /> 
+        <Route path='/checkout' element={<Checkout/>} />
       </Routes> 
       </BrowserRouter>
     </ContextProvider>

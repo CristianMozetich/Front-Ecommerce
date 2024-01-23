@@ -8,6 +8,7 @@ const ContextProvider = ({ children }) => {
   const [userId, setUserId] = useState('');
   const [cartId, setCartId] = useState('');
   const [jwt, setJwt] = useState('');
+  const [cart, setCart] = useState([]);
 
 
   const decodeToken = (token) => {
@@ -24,7 +25,7 @@ const ContextProvider = ({ children }) => {
   };
 
   return (
-    <Context.Provider value={{ userId, setUserId, cartId, setCartId, jwt, setJwt, decodeToken }}>
+    <Context.Provider value={{ userId, setUserId, cartId, setCartId, jwt, setJwt, decodeToken, cart, setCart }}>
       {children}
     </Context.Provider>
   );
