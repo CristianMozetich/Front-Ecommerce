@@ -12,6 +12,7 @@ const Header = () => {
                 <NavLink to={"/login"}>Login</NavLink>
                 <NavLink to={"/products"}>Productos</NavLink>
                 <NavLink to={"/carts/:id"}>Carrito</NavLink>
+                <NavLink to={"/new-products"}>Crear Productos</NavLink>
             </ul>
         </nav>
     </header>

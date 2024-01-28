@@ -3,9 +3,10 @@ import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import { useContext } from 'react';
 import { Context } from '../../utils/ContextProviders';
+import axios from 'axios'
 
 const CheckoutForm = () => {
-  const {cart} = useContext(Context)
+  const {cart, cartId} = useContext(Context)
 
   const stripe = useStripe();
   const elements = useElements();
@@ -13,17 +14,30 @@ const CheckoutForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: 'card',
       card: elements.getElement(CardElement)
     });
 
     // Manejar el resultado de la creación del método de pago (paymentMethod)
-    if (error) {
-      console.error(error);
+    if (!error) {
+      const { id } = paymentMethod
+
+      await axios.post(`https://backend-coderhouse-b16n.onrender.com/api/carts/${cartId}/purchase`, {
+        code: id,
+        amount: 30000,
+      },{
+        headers: {
+            'Authorization': `pk_test_51ObSiJHTCFs5XNPn9JpO7VRSPJlMz0yh8PLiuh8LaRdoijMuDX9bt8pIBT1taqeZLfdyWX7o8uDugn4ZEx7cGOPr00opcoGUdO`, 
+            'Content-Type': 'application/json',
+        }
+      })
+
     } else {
       console.log(paymentMethod);
-      // Aquí puedes realizar acciones adicionales con el resultado del pago
+      console.error("Error al crear el método de pago:", error);
+
     }
   };
 
@@ -39,6 +53,7 @@ const CheckoutForm = () => {
           </div>
         ))
       }
+      <h3>Total: </h3>
       <CardElement />
       <button type="submit">Comprar</button>
     </form>
