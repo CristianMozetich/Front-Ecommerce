@@ -24,15 +24,14 @@ const CheckoutForm = () => {
     if (!error) {
       const { id } = paymentMethod
 
-      await axios.post(`https://backend-coderhouse-b16n.onrender.com/api/carts/${cartId}/purchase`, {
+      const { data } = await axios.post(`https://backend-coderhouse-b16n.onrender.com/api/carts/${cartId}/purchase`, {
         code: id,
         amount: 30000,
-      },{
-        headers: {
-            'Authorization': `pk_test_51ObSiJHTCFs5XNPn9JpO7VRSPJlMz0yh8PLiuh8LaRdoijMuDX9bt8pIBT1taqeZLfdyWX7o8uDugn4ZEx7cGOPr00opcoGUdO`, 
-            'Content-Type': 'application/json',
-        }
       })
+
+      console.log(data)
+
+      elements.getElement(CardElement).clear()
 
     } else {
       console.log(paymentMethod);
