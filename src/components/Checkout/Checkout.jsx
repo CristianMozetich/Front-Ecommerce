@@ -6,7 +6,7 @@ import { Context } from '../../utils/ContextProviders';
 import axios from 'axios'
 
 const CheckoutForm = () => {
-  const {cart, cartId} = useContext(Context)
+  const {cart, cartId, userId} = useContext(Context)
 
   const stripe = useStripe();
   const elements = useElements();
@@ -25,7 +25,8 @@ const CheckoutForm = () => {
       const { id } = paymentMethod
 
       const { data } = await axios.post(`https://backend-coderhouse-b16n.onrender.com/api/carts/${cartId}/purchase`, {
-        code: id,
+        id,
+        code: userId,
         amount: 30000,
       })
 
