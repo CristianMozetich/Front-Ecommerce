@@ -9,7 +9,9 @@ import ProductDetails from './components/ProductDetails/ProductDetails'
 import ContextProvider from './utils/ContextProviders'
 import Cart from './components/Cart/Cart'
 import Checkout from './components/Checkout/Checkout'
+import Footer from './components/Footer/Footer'
 import './App.css'
+
 
 
 
@@ -35,6 +37,7 @@ function App() {
         <Route path='/new-products' element={<NewProducts />} />
         <Route path='/checkout' element={<Checkout/>} />
       </Routes> 
+      <Footer/>
       </BrowserRouter>
     </ContextProvider>
 

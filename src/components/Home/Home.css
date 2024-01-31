@@ -1,0 +1,27 @@
+.home{
+    background-color: #223153;
+    color: white;
+    padding: 20px;
+}
+.titulo{
+    text-align: center;
+    margin: 20px;
+}
+
+.home_desc{
+    display: flex;
+    max-width: 800px;
+    margin: auto;
+    font-size: 28px;
+    align-items: center;
+}
+.desc{
+    margin: 12px;
+    padding: 8px;
+}
+.img_home{
+    max-width: 400px;
+    border-radius: 12px;
+    margin: 12px;
+    padding: 8px;
+}
