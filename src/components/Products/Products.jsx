@@ -28,6 +28,10 @@ const Products = () => {
       products.map((prod) => (
           <div className='card' key={prod._id}>
             <h3>{prod.title}</h3>
+            {/* Verifica que prod.thumbnails sea un array y tenga al menos una imagen */}
+            {Array.isArray(prod.thumbnails) && prod.thumbnails.length > 0 && (
+              <img src={prod.thumbnails[0].path} alt={prod.title} />
+            )}
             <p>{prod.description}</p>
             <p>Precio: ${prod.price}</p>
             <p>Stock: {prod.stock}</p>
