@@ -31,6 +31,28 @@ const NewProducts = () => {
     if(response.status === 201){
       const datos = await response.json()
       console.log(datos)
+
+
+      const prodId = datos._id;
+      const imageForm = new FormData();
+      const productImage = document.getElementById('productImage').files[0];
+      imageForm.append('productImage', productImage);
+
+      const uploadImageResponse = await fetch(`http://localhost:8090/api/users/${prodId}/products`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        },
+        body: imageForm
+      });
+
+      if (uploadImageResponse.status === 200) {
+        const uploadedImageData = await uploadImageResponse.json();
+        console.log('Imagen del producto cargada exitosamente:', uploadedImageData);
+
+        
+        formRef.current.reset(); 
+      }
     }
 
   }
@@ -72,6 +94,11 @@ const NewProducts = () => {
             <input type="text" id='code' className='code' placeholder='Code' name='code'  />
             
           </div>
+
+          <div className="mb-3">
+          <label htmlFor="productImage" className="form-label m-2">Imagen del Producto</label>
+          <input type="file" id="productImage" name="productImage" accept="image/*" />
+        </div>
 
           <button type="submit" className="btn btn-primary m-2 p-2">Crear Producto</button>
 
