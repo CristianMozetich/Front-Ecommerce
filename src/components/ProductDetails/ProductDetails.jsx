@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useContext } from 'react';
 import { Context } from '../../utils/ContextProviders';
 import { useNavigate } from 'react-router-dom'
+import './ProductDetails.css'
 
 
 const ProductDetails = () => {
@@ -60,11 +61,14 @@ const ProductDetails = () => {
   }, [id, jwt]);
 
   return (
-    <div>
+    <div className='card_details'>
       <h1>Detalles del producto</h1>
       <h2>{productDetails.title}</h2>
-      <p>${productDetails.price}</p>
+      {Array.isArray(productDetails.thumbnails) && productDetails.thumbnails.length > 0 && (
+            <img src={`https://backend-coderhouse-b16n.onrender.com/api/users/images/${productDetails.thumbnails[0].filename}`} alt={productDetails.title} />
+      )}
       <p>{productDetails.description}</p>
+      <p>${productDetails.price}</p>
 
       <label htmlFor="quantity">Cantidad:</label>
       <input
