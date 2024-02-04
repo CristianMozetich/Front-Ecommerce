@@ -19,7 +19,7 @@ const NewProducts = () => {
     const token = getCookies('jwtCookies')
 
 
-    const response = await fetch('http://localhost:8090/api/products',{
+    const response = await fetch('https://backend-coderhouse-b16n.onrender.com/api/products',{
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${token} `,
@@ -38,7 +38,7 @@ const NewProducts = () => {
       const productImage = document.getElementById('productImage').files[0];
       imageForm.append('productImage', productImage);
 
-      const uploadImageResponse = await fetch(`http://localhost:8090/api/users/${prodId}/products`, {
+      const uploadImageResponse = await fetch(`https://backend-coderhouse-b16n.onrender.com/api/users/${prodId}/products`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
