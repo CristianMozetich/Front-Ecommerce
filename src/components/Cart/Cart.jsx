@@ -35,7 +35,7 @@ const Cart = () => {
     if (cartId) {
       fetchCart();
     }
-  }, [jwt, cartId, setCart]);
+  }, [jwt, cartId, setCart, cart]);
 
 
   const removeFromCart = async (id_prod) => {
@@ -50,7 +50,7 @@ const Cart = () => {
       if (response.ok) {
         const data = await response.json();
         console.log(data);
-        setCart((prevCart) => prevCart.filter(item => item.id_prod._id !== id_prod));
+        setCart((prevCart) => prevCart.filter(item => item.id_prod._id !== id_prod._id));
 
       }else{
         console.log('Error al eliminar el producto del carrito')
@@ -66,7 +66,7 @@ const Cart = () => {
 
     // Iterar sobre el carrito y combinar productos duplicados
     cart.forEach((product) => {
-      const existingProduct = combinedCart.find((prod) => prod.id_prod.title === product.id_prod.title);
+      const existingProduct = combinedCart.find((prod) => prod._id === product._id);
 
       if (existingProduct) {
         // Si ya existe un producto con el mismo nombre, sumar las cantidades
@@ -88,10 +88,10 @@ const Cart = () => {
       <div className='cart'>
         <ul>
           {combinedCart.map((prods) => (
-            <li key={prods.id_prod.title}>
-              <p>Producto: {prods.id_prod.title}</p>
+            <li key={prods._id}>
+              <p>Producto: {prods.title}</p>
               <p>Cantidad: {prods.quantity}</p>
-              <button onClick={ ()=> removeFromCart(prods.id_prod._id) }>Eliminar</button>
+              <button onClick={ ()=>{console.log(prods.id_prod);removeFromCart(prods.id_prod._id) } }>Eliminar</button>
             </li>
           ))}
         </ul>
