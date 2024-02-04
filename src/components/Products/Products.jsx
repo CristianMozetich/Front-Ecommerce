@@ -30,7 +30,7 @@ const Products = () => {
             <h3>{prod.title}</h3>
             {/* Verifica que prod.thumbnails sea un array y tenga al menos una imagen */}
             {Array.isArray(prod.thumbnails) && prod.thumbnails.length > 0 && (
-            <img src={`http://localhost:8090/api/users/images/${prod.thumbnails[0].filename}`} alt={prod.title} />
+            <img src={`https://backend-coderhouse-b16n.onrender.com/api/users/images/${prod.thumbnails[0].filename}`} alt={prod.title} />
 
             )}
             <p>{prod.description}</p>
