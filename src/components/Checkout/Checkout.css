@@ -1,0 +1,45 @@
+/* Estilos mejorados para la información de la tarjeta */
+.card {
+    max-width: 400px;
+    margin: 100pxauto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card div {
+    margin-bottom: 15px;
+  }
+  
+  h3 {
+    margin-top: 20px;
+  }
+  
+  /* Estilos para los campos de entrada */
+  input {
+    width: 100%;
+    padding: 6px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Estilos para el botón de compra */
+  .boton_checkout {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .boton_checkout:hover {
+    background-color: #0056b3;
+  }
+  

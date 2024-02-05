@@ -84,21 +84,34 @@ const Cart = () => {
 
   return (
     <div>
-      <h1>Carrito de Compras</h1>
-      <div className='cart'>
-        <ul>
+    <h1>Carrito de Compras</h1>
+    <div className='cart'>
+      <table>
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
           {combinedCart.map((prods) => (
-            <li key={prods._id}>
-              <p>Producto: {prods.title}</p>
-              <p>Cantidad: {prods.quantity}</p>
-              <button onClick={ ()=>{console.log(prods.id_prod);removeFromCart(prods.id_prod._id) } }>Eliminar</button>
-            </li>
+            <tr key={prods._id} className='card_cart'>
+              <td>{prods.id_prod.title}</td>
+              <td>${prods.id_prod.price}</td>
+              <td>{prods.quantity}</td>
+              <td>
+                <button className='button' onClick={() => removeFromCart(prods.id_prod._id)}>Eliminar</button>
+              </td>
+            </tr>
           ))}
-        </ul>
-        <Link to={'/checkout'} >Finalizar compra</Link>
-      </div>
+        </tbody>
+      </table>
+      <Link className='link' to={'/checkout'}>Finalizar compra</Link>
     </div>
-  );
+  </div>
+);
 };
 
 export default Cart;

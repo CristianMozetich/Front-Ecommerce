@@ -6,3 +6,8 @@
 .card_details img{
     max-width: 500px;
 }
+.login_mensaje{
+    padding: 5px;
+    margin: 5px;
+    color: red;
+}

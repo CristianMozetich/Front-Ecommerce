@@ -3,6 +3,7 @@ import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import { useContext } from 'react';
 import { Context } from '../../utils/ContextProviders';
+import './Checkout.css'
 import axios from 'axios'
 
 const CheckoutForm = () => {
@@ -55,7 +56,7 @@ const CheckoutForm = () => {
       }
       <h3>Total: </h3>
       <CardElement />
-      <button type="submit">Comprar</button>
+      <button className='boton_checkout' type="submit">Comprar</button>
     </form>
   );
 };

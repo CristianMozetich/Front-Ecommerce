@@ -13,10 +13,16 @@ const ProductDetails = () => {
   const [productDetails, setProductDetails] = useState({});
   const { jwt, cartId, setCartId, decodeToken } = useContext(Context);
   const [quantity, setQuantity] = useState(0);
+  const [loginMensaje, setLoginMensaje] = useState('')
 
 
   const addToCart = async () => {
 
+    if(!jwt){
+      setLoginMensaje('Debe iniciar sesión para comprar productos')
+    }
+
+    
     const tokenDecodificado = decodeToken(jwt);
     setCartId(tokenDecodificado.user.cart);
 
@@ -79,7 +85,9 @@ const ProductDetails = () => {
         value={quantity}
         onChange={(e) => setQuantity(parseInt(e.target.value, 10))}
       />
-      
+        {
+        loginMensaje && <h4 className="login_mensaje">{loginMensaje}</h4>
+        }
       <button className='btn btn-primary m-2' onClick={addToCart}>
         Agregar al carrito
       </button>
