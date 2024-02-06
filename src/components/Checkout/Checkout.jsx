@@ -55,7 +55,7 @@ const CheckoutForm = () => {
         ))
       }
       <h3>Total: </h3>
-      <CardElement />
+      <CardElement className='stripe_input' />
       <button className='boton_checkout' type="submit">Comprar</button>
     </form>
   );

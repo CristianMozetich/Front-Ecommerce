@@ -1,8 +1,44 @@
-.prodContainer{
-    gap: 8px;
+.products {
+    color: white;
+    background-color: #030712;
 }
-.card{
+
+.container_title {
+    max-width: 1200px;
+    margin: auto;
+    padding-top: 50px;
+}
+
+.title {
+    text-align: left;
+    margin-left: 30px;
+}
+
+.prodContainer {
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.card_prod {
+    background-color: #030712;
     width: 250px;
     margin: 10px auto;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.img_card {
+    max-width: 200px;
+    max-height: 150px;
+    display: flex;
+    margin: auto;
+}
+
+.card_footer {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
     padding: 10px;
 }

@@ -1,7 +1,7 @@
 /* Estilos mejorados para la información de la tarjeta */
 .card {
-    max-width: 400px;
-    margin: 100pxauto;
+    max-width: 600px;
+    margin: 100px auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -18,7 +18,7 @@
   }
   
   /* Estilos para los campos de entrada */
-  input {
+  .stripe_input {
     width: 100%;
     padding: 6px;
     margin-bottom: 15px;

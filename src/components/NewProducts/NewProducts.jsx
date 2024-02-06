@@ -59,13 +59,15 @@ const NewProducts = () => {
 
 
   return (
+    <>
+    <h1 className='m-2 p-3'>Panel Admin</h1>
+    <h2 className='m-2 p-3'>Crear Nuevos Productos</h2>
     <div className='createProd container text-center'>
-      <h2 className='m-2 p-3'>Crear Nuevos Productos</h2>
        <form onSubmit={handleSubmit} ref={formRef}>
 
           <div className="mb-3">
             <label htmlFor="title" className="form-label m-2">Title</label>
-            <input type="text" id="title" className="title" placeholder="Title" name='title' />
+            <input type="text" id="title" className="title_new_product" placeholder="Title" name='title' />
           </div>
 
           <div className="mb-3">
@@ -105,6 +107,7 @@ const NewProducts = () => {
       </form>
       
     </div>
+    </>
   )
 }
 

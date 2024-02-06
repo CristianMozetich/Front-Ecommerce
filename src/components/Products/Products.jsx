@@ -21,23 +21,23 @@ const Products = () => {
 
 
   return (
-    <div className='text-center'>
-      <h2>Productos</h2>
-      <div className='prodContainer d-flex flex-wrap col-sm-8 m-auto'>
+    <div className='products'>
+      <div className='container_title'>      
+        <h1 className='title'>Productos</h1>
+      </div>
+      <div className='prodContainer'>
       {
       products.map((prod) => (
-          <div className='card' key={prod._id}>
-            <h3>{prod.title}</h3>
+          <div className='card_prod text-white' key={prod._id}>
             {/* Verifica que prod.thumbnails sea un array y tenga al menos una imagen */}
             {Array.isArray(prod.thumbnails) && prod.thumbnails.length > 0 && (
-            <img src={`https://backend-coderhouse-b16n.onrender.com/api/users/images/${prod.thumbnails[0].filename}`} alt={prod.title} />
-
+            <img className='img_card' src={`https://backend-coderhouse-b16n.onrender.com/api/users/images/${prod.thumbnails[0].filename}`} alt={prod.title} />
             )}
-            <p>{prod.description}</p>
-            <p>Precio: ${prod.price}</p>
-            <p>Stock: {prod.stock}</p>
-            <p>Categoría: {prod.category}</p>
-            <Link to={`/products/${prod._id}`} className='btn btn-primary'>Detalles</Link>
+            <div className='card_footer'>
+              <h4 className='text-center'>{prod.title}</h4>
+              <h5>$ {prod.price}</h5>
+            </div>
+            <Link to={`/products/${prod._id}`}><button className='btn btn-dark'>Detalles</button></Link>
           </div>
         ))}
       </div>
