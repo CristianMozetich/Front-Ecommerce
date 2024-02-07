@@ -1,4 +1,16 @@
-.createProd{
+.admin_panel {
+    display: flex;
+    margin: 10px;
+
+    align-items: center;
+}
+
+.imgPerfil {
+    width: 120px;
+    border-radius: 30%;
+}
+
+.createProd {
     margin: auto;
     margin-top: 50px;
     margin-bottom: 50px;

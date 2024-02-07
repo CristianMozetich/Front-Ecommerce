@@ -1,10 +1,37 @@
-import { useRef } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { getCookies } from '../../utils/formsUtils.js'
 import './NewProducts.css'
 
 
 
 const NewProducts = () => {
+  const [userProfileImg, setUserProfileImg] = useState(null)
+  const [userProfileImgUrl, setUserProfileImgUrl] = useState(null);
+
+  useEffect(()=> {
+    const fetchPerfilUser = async () => {
+      try{
+        const token = getCookies('jwtCookies');
+        const response = await fetch(`https://backend-coderhouse-b16n.onrender.com/api/users/imagesperfil/1707253086851-oso.jpg`, {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        })
+
+        if(response.ok){
+          const imageData = await response.blob()
+          setUserProfileImg(imageData)
+          const imageUrl = URL.createObjectURL(imageData);
+          setUserProfileImgUrl(imageUrl);
+        } 
+      }catch (error){
+        console.log(`${error} al obtener la imagen de perfil `)
+      }
+    }
+
+    fetchPerfilUser()
+  }, [])
 
   const formRef = useRef(null)
 
@@ -60,8 +87,13 @@ const NewProducts = () => {
 
   return (
     <>
+    <div className='admin_panel'>
     <h1 className='m-2 p-3'>Panel Admin</h1>
-    <h2 className='m-2 p-3'>Crear Nuevos Productos</h2>
+    {
+      userProfileImgUrl && <img className='imgPerfil' src={userProfileImgUrl} alt="perfil" />
+    }
+    </div>
+    <h2 className='m-3 p-3'>Crear Nuevos Productos</h2>
     <div className='createProd container text-center'>
        <form onSubmit={handleSubmit} ref={formRef}>
 
