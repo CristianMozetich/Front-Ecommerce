@@ -5,7 +5,6 @@ import './NewProducts.css'
 
 
 const NewProducts = () => {
-  const [userProfileImg, setUserProfileImg] = useState(null)
   const [userProfileImgUrl, setUserProfileImgUrl] = useState(null);
 
   useEffect(()=> {
@@ -21,7 +20,6 @@ const NewProducts = () => {
 
         if(response.ok){
           const imageData = await response.blob()
-          setUserProfileImg(imageData)
           const imageUrl = URL.createObjectURL(imageData);
           setUserProfileImgUrl(imageUrl);
         } 
