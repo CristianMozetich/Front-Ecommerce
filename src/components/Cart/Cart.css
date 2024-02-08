@@ -1,11 +1,12 @@
 /* Estilos para la tabla del carrito */
 .cart {
-    margin-top: 20px;
+    margin: 100px auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
 }
 
 table {

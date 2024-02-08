@@ -1,18 +1,18 @@
-.formulario{
-    margin: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    max-width: 400px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    box-shadow: 0 0 5px #ccc;
-    background-color: rgba(104, 183, 247, 0.67);
+.formulario {
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 0 5px #ccc;
+  background-color: rgba(104, 183, 247, 0.67);
+  color: white;
 }
 
-.form-label{
-    display: block;
-    margin-bottom: 5px;
+.form-label {
+  display: block;
+  margin-bottom: 5px;
 }
 
 .form-name:focus,
@@ -20,9 +20,8 @@
 .form-edad:focus,
 .form-email:focus,
 .form_password:focus {
-  border-color: #007bff; /* Cambiar el color del borde al enfocar */
-  box-shadow: 0 0 5px #007bff; /* Agregar una sombra al enfocar */
+  border-color: #007bff;
+  /* Cambiar el color del borde al enfocar */
+  box-shadow: 0 0 5px #007bff;
+  /* Agregar una sombra al enfocar */
 }
-
-
-

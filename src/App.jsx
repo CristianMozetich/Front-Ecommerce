@@ -10,10 +10,8 @@ import ContextProvider from './utils/ContextProviders'
 import Cart from './components/Cart/Cart'
 import Checkout from './components/Checkout/Checkout'
 import Footer from './components/Footer/Footer'
+import PanelAdmin from './components/PanelAdmin/PanelAdmin'
 import './App.css'
-
-
-
 
 
 
@@ -35,6 +33,7 @@ function App() {
         <Route path='/products/:id' element={<ProductDetails/>} />
         <Route path='/carts/:id' element={<Cart/>} />
         <Route path='/new-products' element={<NewProducts />} />
+        <Route path='/panel-admin' element={<PanelAdmin/>} />
         <Route path='/checkout' element={<Checkout/>} />
       </Routes> 
       <Footer/>

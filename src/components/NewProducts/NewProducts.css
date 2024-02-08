@@ -1,22 +1,19 @@
 .admin_panel {
     display: flex;
-    margin: 10px;
-
     align-items: center;
 }
 
 .imgPerfil {
-    width: 120px;
-    border-radius: 30%;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
 }
 
 .createProd {
     margin: auto;
     margin-top: 50px;
-    margin-bottom: 50px;
     max-width: 400px;
     padding: 20px;
-    border: 1px solid #ccc;
     border-radius: 6px;
     box-shadow: 0 0 5px #ccc;
     background-color: rgba(104, 183, 247, 0.67);
