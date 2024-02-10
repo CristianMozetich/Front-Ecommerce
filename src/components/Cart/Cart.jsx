@@ -84,7 +84,7 @@ const Cart = () => {
 
   return (
     <div>
-    <h1 className='text-white m-3 p-3'>Carrito</h1>
+    <h1 className='m-3 p-3'>Carrito</h1>
     <div className='cart'>
       <table>
         <thead>

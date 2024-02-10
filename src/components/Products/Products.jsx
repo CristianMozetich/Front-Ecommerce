@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import './Products.css'
 import { Link } from 'react-router-dom'
+import Filters from '../Filters/Filters'
 
 const Products = () => {
 
@@ -24,6 +25,7 @@ const Products = () => {
     <div className='products'>
       <div className='container_title'>      
         <h1 className='title'>Productos</h1>
+        <Filters/>
       </div>
       <div className='prodContainer'>
       {

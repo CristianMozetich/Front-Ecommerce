@@ -1,7 +1,3 @@
-.products {
-    color: white;
-}
-
 .container_title {
     max-width: 1200px;
     margin: auto;
@@ -21,7 +17,7 @@
 }
 
 .card_prod {
-    background-color: #030712;
+    background-color: #4a8362;
     width: 250px;
     margin: 10px auto;
     padding: 10px;

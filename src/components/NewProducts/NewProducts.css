@@ -16,5 +16,6 @@
     padding: 20px;
     border-radius: 6px;
     box-shadow: 0 0 5px #ccc;
-    background-color: rgba(104, 183, 247, 0.67);
+    background-color: rgba(131, 204, 136, 0.67);
+    color: white;
 }
