@@ -6,7 +6,7 @@ const Home = () => {
     <div className='home'>
         <div className='home_desc'>
           <div className='home_desc2'>
-            <h1 className='titulo'>Santa Rita</h1>
+            <h1 className='titulo'>Santa Rita Store</h1>
             <p className='desc'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae unde voluptate, laudantium reprehenderit quia animi?</p>
             <Link to={"/login"} ><button className='btn btn-dark'>Login</button></Link>
             <Link to={"/register"} ><button className='btn btn-dark'>Registro</button></Link>

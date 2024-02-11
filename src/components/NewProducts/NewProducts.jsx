@@ -1,35 +1,51 @@
-import { useRef, useState, useEffect } from 'react'
+import { useRef, useState, useEffect, useContext } from 'react'
 import { getCookies } from '../../utils/formsUtils.js'
+import { Context } from '../../utils/ContextProviders.jsx';
 import './NewProducts.css'
+
 
 
 
 const NewProducts = () => {
   const [userProfileImgUrl, setUserProfileImgUrl] = useState(null);
+  const { jwt, decodeToken } = useContext(Context) 
 
-  useEffect(()=> {
-    const fetchPerfilUser = async () => {
-      try{
-        const token = getCookies('jwtCookies');
-        const response = await fetch(`https://backend-coderhouse-b16n.onrender.com/api/users/imagesperfil/1707420016735-cat.webp`, {
-          method: 'GET',
-          headers: {
-            'Authorization': `Bearer ${token}`
+
+
+    useEffect(() => {
+      const fetchPerfilUser = async () => {
+        try {
+          const infoToken = decodeToken(jwt);
+          const documents = infoToken.user.documents;
+    
+          if (Array.isArray(documents) && documents.length > 0) {
+            const imagePath = documents[0].path;
+            const token = getCookies('jwtCookies');
+            const response = await fetch(`${imagePath}`, {
+              method: 'GET',
+              headers: {
+                'Authorization': `Bearer ${token}`
+              }
+            });
+    
+            if (response.ok) {
+              const imageData = await response.blob();
+              const imageUrl = URL.createObjectURL(imageData);
+              setUserProfileImgUrl(imageUrl);
+            } else {
+              console.error('Error al cargar la imagen:', response.status);
+            }
+          } else {
+            console.error('El token no contiene documentos de usuario.');
           }
-        })
-
-        if(response.ok){
-          const imageData = await response.blob()
-          const imageUrl = URL.createObjectURL(imageData);
-          setUserProfileImgUrl(imageUrl);
-        } 
-      }catch (error){
-        console.log(`${error} al obtener la imagen de perfil `)
-      }
-    }
-
-    fetchPerfilUser()
-  }, [])
+        } catch (error) {
+          console.error('Error al obtener la imagen de perfil:', error);
+        }
+      };
+    
+      fetchPerfilUser();
+    }, [jwt, decodeToken]);
+    
 
   const formRef = useRef(null)
 
