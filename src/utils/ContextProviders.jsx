@@ -9,6 +9,19 @@ const ContextProvider = ({ children }) => {
   const [cartId, setCartId] = useState('');
   const [jwt, setJwt] = useState('');
   const [cart, setCart] = useState([]);
+  const [filters, setFilters] = useState({
+    category: 'all',
+    minPrice: 0
+  })
+
+  const filteredProducts = ({ products }) => {
+    return products.filter(prod => {
+      return (
+        prod.price >= filters.minPrice &&
+        (filters.category === 'all' || prod.category === filters.category)
+      )
+    })
+  }
 
   const decodeToken = (token) => {
     try {
@@ -24,7 +37,7 @@ const ContextProvider = ({ children }) => {
   };
 
   return (
-    <Context.Provider value={{ userId, setUserId, cartId, setCartId, jwt, setJwt, decodeToken, cart, setCart }}>
+    <Context.Provider value={{ userId, setUserId, cartId, setCartId, jwt, setJwt, decodeToken, cart, setCart, setFilters, filteredProducts, filters }}>
       {children}
     </Context.Provider>
   );

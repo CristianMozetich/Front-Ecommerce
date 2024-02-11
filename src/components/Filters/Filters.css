@@ -1,0 +1,7 @@
+.filters {
+    display: flex;
+    justify-content: space-between;
+    max-width: 500px;
+    margin: 20px auto;
+    font-weight: 700;
+}

@@ -1,11 +1,13 @@
-import { useEffect, useState } from 'react'
-import './Products.css'
+import { useEffect, useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { Context } from '../../utils/ContextProviders'
+import './Products.css'
 import Filters from '../Filters/Filters'
 
-const Products = () => {
 
+const Products = () => {
   const [products, setProducts] = useState([])
+  const { filteredProducts } = useContext(Context)
 
   useEffect(() => {
     fetch('https://backend-coderhouse-b16n.onrender.com/api/products', {
@@ -20,16 +22,17 @@ const Products = () => {
   }, [])
 
 
+  const productosFiltrados = filteredProducts({ products });
 
   return (
     <div className='products'>
       <div className='container_title'>      
         <h1 className='title'>Productos</h1>
-        <Filters/>
       </div>
+    <Filters/>
       <div className='prodContainer'>
       {
-      products.map((prod) => (
+      productosFiltrados.map((prod) => (
           <div className='card_prod text-white' key={prod._id}>
             {/* Verifica que prod.thumbnails sea un array y tenga al menos una imagen */}
             {Array.isArray(prod.thumbnails) && prod.thumbnails.length > 0 && (
@@ -48,3 +51,4 @@ const Products = () => {
 }
 
 export default Products
+ 

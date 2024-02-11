@@ -11,7 +11,7 @@ const Home = () => {
             <Link to={"/login"} ><button className='btn btn-dark'>Login</button></Link>
             <Link to={"/register"} ><button className='btn btn-dark'>Registro</button></Link>
           </div>
-          <img className="img_home" src="/img/weed.jpeg" alt="mates" />
+          <img className="img_home" src="/img/reloj-int.webp" alt="mates" />
         </div>
     </div>
   )
