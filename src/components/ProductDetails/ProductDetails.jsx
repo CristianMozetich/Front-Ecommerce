@@ -71,7 +71,7 @@ const ProductDetails = () => {
       <h1>Detalles del producto</h1>
       <h2>{productDetails.title}</h2>
       {Array.isArray(productDetails.thumbnails) && productDetails.thumbnails.length > 0 && (
-            <img src={`https://backend-coderhouse-b16n.onrender.com/api/users/images/${productDetails.thumbnails[0].filename}`} alt={productDetails.title} />
+            <img src={`${productDetails.thumbnails[0].path}`} alt={productDetails.title} />
       )}
       <p>{productDetails.description}</p>
       <p>${productDetails.price}</p>

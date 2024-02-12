@@ -41,7 +41,7 @@ const Filters = () => {
         <label htmlFor={categoryFilterId}>Categoría</label>
         <select id={categoryFilterId} onChange={handleChangeCategory}>
             <option value="all">Todos los productos</option>
-            <option value="juegos">Juegos</option>
+            <option value="Juegos">Juegos</option>
             <option value="Videojuegos">Videojuegos</option>
         </select>
         </div>

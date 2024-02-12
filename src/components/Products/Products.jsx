@@ -36,7 +36,7 @@ const Products = () => {
           <div className='card_prod text-white' key={prod._id}>
             {/* Verifica que prod.thumbnails sea un array y tenga al menos una imagen */}
             {Array.isArray(prod.thumbnails) && prod.thumbnails.length > 0 && (
-            <img className='img_card' src={`https://backend-coderhouse-b16n.onrender.com/api/users/images/${prod.thumbnails[0].filename}`} alt={prod.title} />
+            <img className='img_card' src={`${prod.thumbnails[0].path}`} alt={prod.title} />
             )}
             <div className='card_footer'>
               <h4 className='text-center'>{prod.title}</h4>

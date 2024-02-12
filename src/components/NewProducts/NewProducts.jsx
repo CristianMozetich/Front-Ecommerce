@@ -64,7 +64,7 @@ const NewProducts = () => {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${token} `,
-        'Content-type': 'application/json'
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify(data)
     })
