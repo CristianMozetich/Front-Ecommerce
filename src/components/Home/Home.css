@@ -17,6 +17,7 @@
     border-radius: 12px;
     margin: 12px;
     padding: 8px;
+    mask-image: linear-gradient(to top, transparent 1%, white);
 }
 
 .titulo {
@@ -24,7 +25,8 @@
     font-size: 72px;
     letter-spacing: 0.890rem;
 }
-.loginbtn{
+
+.loginbtn {
     text-decoration: none;
     width: 150px;
     background-color: black;
@@ -36,11 +38,13 @@
     padding: 8px;
     letter-spacing: 0.160rem;
 }
-.loginbtn:hover{
+
+.loginbtn:hover {
     background-color: gray;
     transition: 0.5s;
 }
-.register{
+
+.register {
     text-decoration: none;
     width: 150px;
     background-color: black;
@@ -52,7 +56,8 @@
     padding: 8px;
     letter-spacing: 0.160rem;
 }
-.register:hover{
+
+.register:hover {
     background-color: grey;
     transition: 0.5s;
 }
