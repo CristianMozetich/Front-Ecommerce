@@ -17,16 +17,16 @@
 }
 
 .card_prod {
-    background-color: rgba(131, 204, 136, 0.67);
-    width: 250px;
+    border: solid 1px black;
+    max-width: 500px;
     margin: 10px auto;
     padding: 10px;
     border-radius: 20px;
 }
 
 .img_card {
-    max-width: 200px;
-    max-height: 150px;
+    max-width: 400px;
+    max-height: 350px;
     display: flex;
     margin: auto;
 }
@@ -36,4 +36,5 @@
     flex-direction: column;
     align-items: start;
     padding: 10px;
+    color: black;
 }

@@ -6,6 +6,5 @@
     padding: 20px;
     border-radius: 6px;
     box-shadow: 0 0 5px #ccc;
-    background-color: rgba(131, 204, 136, 0.67);
-    color: white;
+    border: 1px solid black;
 }

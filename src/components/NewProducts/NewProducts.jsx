@@ -102,7 +102,7 @@ const NewProducts = () => {
   return (
     <>
     <div className='admin_panel'>
-    <h1 className='m-2 p-3'>Panel Admin</h1>
+    <h1 className='m-2 p-3'>Panel Administrador</h1>
     {
       userProfileImgUrl && <img className='imgPerfil' src={userProfileImgUrl} alt="perfil" />
     }

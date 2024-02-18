@@ -1,12 +1,13 @@
 /* Footer Styles */
 .footer {
-    color: white;
+    color: black;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #4a8362;
+    background-color: white;
     padding: 40px 20px; /* Ajusta el espacio interno según sea necesario */
+    border-top: 1px solid black;
   }
   
   /* Sección de Información */
@@ -32,7 +33,7 @@
   
   .social-media a {
     text-decoration: none;
-    color: white;
+    color: black;
     margin: 0 10px; /* Espacio entre íconos de redes sociales */
     display: flex;
     flex-direction: column;

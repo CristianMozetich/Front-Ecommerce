@@ -5,13 +5,10 @@ const Home = () => {
   return (
     <div className='home'>
         <div className='home_desc'>
-          <div className='home_desc2'>
-            <h1 className='titulo'>Santa Rita Store</h1>
-            <p className='desc'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae unde voluptate, laudantium reprehenderit quia animi?</p>
-            <Link to={"/login"} ><button className='btn btn-dark'>Login</button></Link>
-            <Link to={"/register"} ><button className='btn btn-dark'>Registro</button></Link>
-          </div>
-          <img className="img_home" src="/img/reloj-int.webp" alt="mates" />
+          <img className="img_home" src="/img/simple.webp" alt="mates" />
+          <h1 className='titulo'>Simple</h1>
+          <Link to={"/login"} ><button className='btn btn-dark m-2'>Login</button></Link>
+          <Link to={"/register"} ><button className='btn btn-dark m-2'>Registro</button></Link>
         </div>
     </div>
   )
