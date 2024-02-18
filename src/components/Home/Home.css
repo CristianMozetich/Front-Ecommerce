@@ -22,4 +22,37 @@
 .titulo {
     text-align: center;
     font-size: 72px;
+    letter-spacing: 0.890rem;
+}
+.loginbtn{
+    text-decoration: none;
+    width: 150px;
+    background-color: black;
+    color: white;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+    padding: 8px;
+    letter-spacing: 0.160rem;
+}
+.loginbtn:hover{
+    background-color: gray;
+    transition: 0.5s;
+}
+.register{
+    text-decoration: none;
+    width: 150px;
+    background-color: black;
+    color: white;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+    padding: 8px;
+    letter-spacing: 0.160rem;
+}
+.register:hover{
+    background-color: grey;
+    transition: 0.5s;
 }

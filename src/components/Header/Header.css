@@ -1,21 +1,28 @@
-.header{
+.header {
     background-color: white;
     width: 100%;
     border-bottom: 1px solid black;
 }
-.navUl{
+
+.navUl {
     display: flex;
     justify-content: space-between;
     padding: 5px;
     margin: 0%;
 }
-.navegador a{
+
+.navegador a {
     text-decoration: none;
-    padding: 5px;
+    padding: 15px;
     color: black;
+    letter-spacing: 0.0876rem;
+    font-size: 12px;
 }
-.registro a{
+
+.registro a {
     text-decoration: none;
-    padding: 5px;
+    padding: 15px;
     color: black;
+    letter-spacing: 0.0876rem;
+    font-size: 12px;
 }
