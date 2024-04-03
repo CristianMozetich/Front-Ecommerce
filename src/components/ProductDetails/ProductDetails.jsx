@@ -12,7 +12,8 @@ const ProductDetails = () => {
   const { id } = useParams();
   const [productDetails, setProductDetails] = useState({});
   const { jwt, cartId, setCartId, decodeToken } = useContext(Context);
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
+  const [total, setTotal] = useState(0);
   const [loginMensaje, setLoginMensaje] = useState('')
 
 
@@ -41,6 +42,8 @@ const ProductDetails = () => {
       if (response.ok) {
         const data = await response.json();
         console.log(data)
+
+        setTotal( total + productDetails.price * quantity ) ;
 
 
       } else {
@@ -81,10 +84,12 @@ const ProductDetails = () => {
         type="number"
         id="quantity"
         name="quantity"
-        min="1"
+        min={1}
+        max={10}
         value={quantity}
         onChange={(e) => setQuantity(parseInt(e.target.value, 10))}
       />
+      <p>Total: ${ productDetails.price * quantity }</p>
         {
         loginMensaje && <h4 className="login_mensaje">{loginMensaje}</h4>
         }

@@ -48,13 +48,13 @@ const CheckoutForm = () => {
     <form className='card' onSubmit={handleSubmit}>
       {
         cart.map((prods) => (
-          <div key={prods.id_prod.title}>
+          <div key={prods.id_prod._id}>
               <p>Producto: {prods.id_prod.title}</p>
               <p>Cantidad: {prods.quantity}</p>
           </div>
         ))
       }
-      <h3>Total: </h3>
+      <h3>Total: $ </h3>
       <CardElement className='stripe_input' />
       <button className='boton_checkout' type="submit">Comprar</button>
     </form>

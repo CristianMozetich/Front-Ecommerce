@@ -1,6 +1,5 @@
 import { useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
-import Logout from '../Logout/Logout.jsx'
 import { useContext } from 'react'
 import { Context } from '../../utils/ContextProviders.jsx'
 import './Login.css'
@@ -68,7 +67,6 @@ const handleSubmit = async (e) =>{
           </div>
 
           <button type="submit" className="btn btn-primary">Login</button>
-          <Logout/>
 
       </form>
       
